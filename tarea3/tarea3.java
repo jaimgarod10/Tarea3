@@ -60,7 +60,7 @@ public class tarea3 extends javax.swing.JFrame {
             }
         });
 
-        inpCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        inpCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DAM1", "DAM2", "ASIR1", "ASIR2", "AF1", "AF2" }));
         inpCurso.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 inpCursoComponentAdded(evt);
@@ -77,7 +77,7 @@ public class tarea3 extends javax.swing.JFrame {
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Apellido", "Curso"
@@ -180,13 +180,8 @@ public class tarea3 extends javax.swing.JFrame {
         
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         
-        for(int i =0; i<model.getRowCount(); i++){
-             String valor = (String) model.getValueAt(0, 0);
-        
-            if(valor.equals(inpNombre)){
-                model.removeRow(0);
-                break;
-            }
+        if(jTable1.getRowCount()>=1){
+            model.removeRow(jTable1.getRowCount()-1);
         }
         
     }//GEN-LAST:event_jBtoBorrarActionPerformed
